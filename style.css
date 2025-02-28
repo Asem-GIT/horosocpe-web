@@ -236,7 +236,36 @@ textarea {
 
 .horoscope-template {
     background-color: #ff6b6b;
+}
 
+/* Estilos para el formulario */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+.form-group {
+    margin-bottom: 20px;
+}
 
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Asegúrate de que el botón del formulario coincida con los otros botones */
+form .btn {
+    width: 100%;
+    margin-top: 20px;
 }

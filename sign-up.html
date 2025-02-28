@@ -1,56 +1,70 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>HTML Horoscopos | Sign Up</title>
-            <link rel="stylesheet" href="1style.css">
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
-        <body>
-            <header>
-        <h1>Sign Up</h1>
-        </header>
-        <main> 
-        <form action="#" method="post">
-                <div>
-                <label for="username">Username</label>
-                <input type="text" id="username">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - HTML Horoscopos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="section">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Volver a Inicio</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="section">
+        <div class="hero-section">
+            <h1>Regístrate</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <main class="form-container">
+            <div class="card">
+                <div class="card-content">
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">Fecha de nacimiento:</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zodiac">Signo zodiacal:</label>
+                            <select id="zodiac" name="zodiac" required>
+                                <option value="">Selecciona tu signo</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn">Registrarse</button>
+                    </form>
+                </div>
             </div>
-            <br/>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="person@earth.com"/>
-            <br/>
-
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password"/>
-            <br/>
-            
-                <fieldset>
-                <legend>Select Your Zodiac</legend>
-                <input type="radio" id="Aquario" value="Aquario" name="sign"/>
-                <label for="Aquario">Aquario</label>
-                <input type="radio" id="Piscis" value="Piscis" name="sign"/>
-                <label for="Piscis">Piscis</label>
-                <input type="radio" id="Aries" value="Aries" name="sign"/>
-                <label for="Aries">Aries</label>
-                </fieldset>
-            <br/>
-
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob">
-            <br/>
-            <label for="bio">Tell us about yourself</label>
-            <br/>
-            <textarea name="bio" id="bio" rows="10" cols="40"></textarea>
-            <br/>
-
-
-            <input type="checkbox" name="terms" id="terms" checked>
-            <label for="terms">I agree to the terms of service</label>
-            <br/>
-
-            <button type="submit">Sign Up</button>
-        </form>
         </main>
-    </body>
+    </div>
+
+    <script src="js/horoscopes.js"></script>
+    <script>
+        // Poblar el select con los signos zodiacales
+        const zodiacSelect = document.getElementById('zodiac');
+        horoscopes.forEach(horoscope => {
+            const option = document.createElement('option');
+            option.value = horoscope.id;
+            option.textContent = horoscope.name;
+            zodiacSelect.appendChild(option);
+        });
+    </script>
+</body>
 </html>
