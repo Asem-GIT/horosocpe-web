@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Horóscopo - HTML Horoscopos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="section">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Volver a Inicio</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="section">
+        <div class="hero-section">
+            <h1 id="horoscope-title">Detalles del Horóscopo</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <main class="horoscope-detail">
+            <div class="card">
+                <div class="card-content">
+                    <div class="horoscope-info">
+                        <img id="horoscope-image" src="" alt="" class="horoscope-detail-image">
+                        <div class="horoscope-text">
+                            <h2>Características</h2>
+                            <p id="horoscope-description"></p>
+                            
+                            <h3>Elemento</h3>
+                            <p id="horoscope-element"></p>
+                            
+                            <h3>Fechas</h3>
+                            <p id="horoscope-dates"></p>
+                            
+                            <h3>Rasgos principales</h3>
+                            <ul id="horoscope-traits"></ul>
+                            
+                            <h3>Compatibilidad</h3>
+                            <p id="horoscope-compatibility"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/horoscopes.js"></script>
+    <script>
+        // Obtener el ID del horóscopo de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const horoscopeId = urlParams.get('id');
+
+        // Encontrar el horóscopo correspondiente
+        const horoscope = horoscopes.find(h => h.id === horoscopeId);
+
+        if (horoscope) {
+            // Actualizar el contenido de la página
+            document.title = `${horoscope.name} - HTML Horoscopos`;
+            document.getElementById('horoscope-title').textContent = horoscope.name;
+            
+            // Imagen
+            const horoscopeImage = document.getElementById('horoscope-image');
+            horoscopeImage.src = horoscope.image;
+            horoscopeImage.alt = horoscope.name;
+            
+            // Descripción
+            const descriptionElement = document.getElementById('horoscope-description');
+            if (descriptionElement && horoscope.description) {
+                descriptionElement.textContent = horoscope.description;
+            }
+            
+            // Elemento
+            const elementElement = document.getElementById('horoscope-element');
+            if (elementElement && horoscope.element) {
+                elementElement.textContent = `Este signo pertenece al elemento ${horoscope.element}`;
+            }
+            
+            // Fechas
+            const datesElement = document.getElementById('horoscope-dates');
+            if (datesElement && horoscope.dates) {
+                datesElement.textContent = `Fechas: ${horoscope.dates}`;
+            }
+            
+            // Rasgos
+            const traitsList = document.getElementById('horoscope-traits');
+            if (traitsList && horoscope.traits && horoscope.traits.length > 0) {
+                traitsList.innerHTML = ''; // Limpiar la lista primero
+                horoscope.traits.forEach(trait => {
+                    const li = document.createElement('li');
+                    li.textContent = trait;
+                    traitsList.appendChild(li);
+                });
+            }
+            
+            // Compatibilidad
+            const compatibilityElement = document.getElementById('horoscope-compatibility');
+            if (compatibilityElement && horoscope.compatibility) {
+                compatibilityElement.textContent = `Mejor compatibilidad con: ${horoscope.compatibility.join(', ')}`;
+            }
+        } else {
+            // Si no se encuentra el horóscopo, mostrar un mensaje de error
+            document.getElementById('horoscope-title').textContent = 'Horóscopo no encontrado';
+            document.querySelector('.horoscope-info').innerHTML = '<p>Lo sentimos, no se encontró la información del horóscopo solicitado.</p>';
+        }
+    </script>
+</body>
+</html> 

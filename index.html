@@ -10,71 +10,41 @@
     <div class="section">
         <!-- Primera sección: Navegación -->
         <nav class="nav-menu">
-            <ul id="horoscope-nav">
-                <!-- Se generará dinámicamente -->
+            <ul>
+                <li><a href="sign-up.html">Sign Up</a></li>
             </ul>
         </nav>
     </div>
     <div class="section">
         <!-- Segunda sección: Hero -->
         <div class="hero-section">
-            <h1>HTML Horoscopos</h1>
-            <a href="sign-up.html" class="btn">Sign Up</a>
+            <h1>Descubre tu Horóscopo</h1>
+            <p>Explora los secretos de los astros</p>
         </div>
     </div>
 
     <div class="section">
         <!-- Tercera sección: Grid de tarjetas -->
-        <main class="grid-container" id="horoscope-cards"> 
-            <template id="horoscope-template"
-            >
-                <div class="card">
-                    <h2></h2>
-                    <div class="card-image">
-                        <img>
-                    </div>
-                    <div class="card-content">
-                        <h3></h3>
-                        <p class="element"></p>
-                        <p class="qualities"></p>
-                        <p class="description"></p>
-                        <a class="btn" target="_blank">Horóscopo Mensual</a>
-                    </div>
-                </div>
-            </template>
+        <main class="horoscope-grid" id="horoscope-grid">
+            <!-- Las tarjetas se generarán aquí dinámicamente -->
         </main>
     </div>
 
     <script src="js/horoscopes.js"></script>
     <script>
-        // Generar la navegación
-        const navList = document.getElementById('horoscope-nav');
+        const horoscopeGrid = document.getElementById('horoscope-grid');
+        
         horoscopes.forEach(horoscope => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="#${horoscope.id}">${horoscope.name}</a>`;
-            navList.appendChild(li);
-        });
-
-        // Generar las tarjetas
-        const container = document.getElementById('horoscope-cards');
-        const template = document.getElementById('horoscope-template');
-
-        horoscopes.forEach(horoscope => {
-            const card = template.content.cloneNode(true);
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.onclick = () => window.location.href = `horoscope-detail.html?id=${horoscope.id}`;
             
-            // Llenar la información
-            card.querySelector('h2').textContent = horoscope.name;
-            card.querySelector('.card').id = horoscope.id;
-            card.querySelector('img').src = horoscope.image;
-            card.querySelector('img').alt = `Signo Zodiacal ${horoscope.name}`;
-            card.querySelector('img').title = `Signo Zodiacal ${horoscope.name}`;
-            card.querySelector('h3').textContent = horoscope.dates;
-            card.querySelector('.element').innerHTML = `<strong>Elemento:</strong> ${horoscope.element}`;
-            card.querySelector('.qualities').innerHTML = `<strong>Cualidades:</strong> ${horoscope.qualities}`;
-            card.querySelector('.description').textContent = horoscope.description;
-            card.querySelector('.btn').href = horoscope.link;
-
-            container.appendChild(card);
+            card.innerHTML = `
+                <img src="${horoscope.image}" alt="${horoscope.name}">
+                <h3>${horoscope.name}</h3>
+            `;
+            
+            horoscopeGrid.appendChild(card);
         });
     </script>
 </body>
