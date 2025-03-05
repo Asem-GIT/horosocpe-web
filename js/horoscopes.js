@@ -22,7 +22,7 @@ const horoscopes = [
         element: "Agua",
         qualities: "Intuitivo, artístico, compasivo",
         description: "Los Piscis son conocidos por su naturaleza empática y su profunda conexión con el mundo espiritual.",
-        image: "Horoscopos Imagenes/AAMRO7FWTFFZNPK2ZOAGJQGB4A.avif",
+        image: "Horoscopos Imagenes/astrology-pisces-bold-400w.png",
         link: "https://www.horoscope.com/us/horoscopes/general/horoscope-general-monthly.aspx?sign=12",
         traits: [
             "Intuitivo",
@@ -63,7 +63,7 @@ const horoscopes = [
     {
         id: "Tauro",
         name: "Tauro",
-        image: "Horoscopos Imagenes/Tauro imagen.jpg",
+        image: "Horoscopos Imagenes/tauro.png",
         dates: "20 de abril - 20 de mayo",
         element: "Tierra",
         description: "Tauro, regido por Venus, es el segundo signo del zodíaco. Los taurinos son conocidos por su naturaleza práctica, determinada y sensual. Con los pies firmemente plantados en la tierra, son los constructores del zodíaco, creando seguridad material y emocional. Su paciencia legendaria y su dedicación los convierten en personas extremadamente confiables y trabajadoras.",
@@ -97,7 +97,7 @@ const horoscopes = [
     {
         id: "Cancer",
         name: "Cáncer",
-        image: "Horoscopos Imagenes/Cancer.avif",
+        image: "Horoscopos Imagenes/cancer.png",
         dates: "21 de junio - 22 de julio",
         element: "Agua",
         description: "Cáncer, regido por la Luna, es el cuarto signo del zodíaco. Los cancerianos son profundamente emocionales, intuitivos y protectores. Como el cangrejo que los simboliza, pueden parecer duros por fuera, pero son suaves y sensibles por dentro. Su conexión con el hogar y la familia es incomparable, y poseen una memoria emocional extraordinaria.",
@@ -131,7 +131,7 @@ const horoscopes = [
     {
         id: "Virgo",
         name: "Virgo",
-        image: "Horoscopos Imagenes/Virgo.jpg",
+        image: "Horoscopos Imagenes/virgos.png",
         dates: "23 de agosto - 22 de septiembre",
         element: "Tierra",
         description: "Virgo, regido por Mercurio, es el sexto signo del zodíaco. Los virginianos son conocidos por su precisión, atención al detalle y naturaleza servicial. Son los perfeccionistas del zodíaco, siempre buscando mejorar todo lo que tocan. Su mente analítica y habilidades prácticas los convierten en excelentes solucionadores de problemas y cuidadores.",
@@ -165,13 +165,13 @@ const horoscopes = [
     {
         id: "Scorpio",
         name: "Escorpio",
-        image: "Horoscopos Imagenes/scorpio-celestial-zodiac-sign-tps-507-898673.webp",
+        image: "Horoscopos Imagenes/scorpio-celestial-zodiac-sign-tps-507-898673.webp?width=400",
         dates: "23 de octubre - 21 de noviembre",
         element: "Agua",
         description: "Escorpio, co-regido por Marte y Plutón, es el octavo signo del zodíaco. Los escorpianos son intensos, apasionados y misteriosos. Poseen una profunda intuición y una capacidad única para ver más allá de las apariencias. Su naturaleza transformadora y su fuerza emocional los convierte en personas magnéticas y poderosas.",
         traits: [
             "Intenso y apasionado",
-            "Perspicaz y intuitivo",
+            "Perspicaz y intuitivo", 
             "Misterioso y magnético",
             "Determinado y poderoso",
             "Leal y protector",
@@ -182,7 +182,7 @@ const horoscopes = [
     {
         id: "Sagitario",
         name: "Sagitario",
-        image: "Horoscopos Imagenes/Sagitario.avif",
+        image: "Horoscopos Imagenes/png-clipart-sagittarius-astrological-sign-astrological-symbols-zodiac-sagittarius-angle-text-thumbnail.png",
         dates: "22 de noviembre - 21 de diciembre",
         element: "Fuego",
         description: "Sagitario, regido por Júpiter, es el noveno signo del zodíaco. Los sagitarianos son los aventureros y filósofos del zodíaco, siempre en busca de nuevos horizontes y verdades superiores. Su optimismo contagioso y su amor por la libertad los convierte en excelentes maestros y exploradores. Son directos, honestos y eternamente entusiastas.",
@@ -199,7 +199,7 @@ const horoscopes = [
     {
         id: "Capricornio",
         name: "Capricornio",
-        image: "Horoscopos Imagenes/capricorn-symbol-zodiac-icon-black-color-illustration-flat-style-simple-image-vector.jpg",
+        image: "Horoscopos Imagenes/Capricorn.webp",
         dates: "22 de diciembre - 19 de enero",
         element: "Tierra",
         description: "Capricornio, regido por Saturno, es el décimo signo del zodíaco. Los capricornianos son los maestros de la disciplina y la responsabilidad. Como la cabra montañesa que los simboliza, son escaladores persistentes que alcanzan sus metas paso a paso. Su naturaleza práctica y su ambición los convierte en líderes naturales y exitosos profesionales.",

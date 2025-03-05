@@ -49,10 +49,10 @@ body {
 
 .horoscope-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -65,6 +65,7 @@ body {
     transition: transform 0.3s ease;
     cursor: pointer;
     border: 1px solid rgba(255, 215, 0, 0.3);
+    min-width: 150px;
 }
 
 .card:hover {
@@ -76,6 +77,9 @@ body {
 .card img {
     width: 100px;
     height: 100px;
+    mix-blend-mode: luminosity;
+    filter: brightness(1.2) contrast(1.1);
+    object-fit: contain;
     margin-bottom: 10px;
 }
 
@@ -137,7 +141,7 @@ form .btn:hover {
 }
 
 .horoscope-info {
-    display: flex;
+    display: block;
     gap: 30px;
     align-items: flex-start;
     background: rgba(255, 255, 255, 0.1);
@@ -149,6 +153,8 @@ form .btn:hover {
 .horoscope-detail-image {
     width: 200px;
     height: 200px;
+    mix-blend-mode: luminosity;
+    filter: brightness(1.2) contrast(1.1);
     object-fit: contain;
 }
 
@@ -164,22 +170,35 @@ form .btn:hover {
 }
 
 .horoscope-text ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horoscope-text li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1200px) {
+    .horoscope-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .horoscope-info {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .horoscope-detail-image {
-        margin-bottom: 20px;
-    }
-    
     .horoscope-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 480px) {
+    .horoscope-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajustar tamaño específico para la imagen de escorpio */
+img[src*="scorpio"] {
+    width: 400px;
+    height: auto; /* Mantiene la proporción de la imagen */
 }
